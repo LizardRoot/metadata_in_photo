@@ -54,16 +54,14 @@ def metadata(image):
     print(Fore.GREEN + 'File name:               ' + file)
     if os.path.isdir(image):
         print(Fore.RED + image + ' - is folder. In the folder with the script, leave only the images.')
-        input('PRESS ENTER TO EXIT...')
-        exit()
+        return
 
     #type file
     type_file = imghdr.what(image)
 
     if str(type_file) == 'None':
-        print(Fore.RED + str(image) + ' - is not an image. Only images should be in the folder.')
-        input('PRESS ENTER TO EXIT...')
-        exit()
+        print(Fore.RED + str(image) + ' - is not an image. Only images should be in the folder.')        
+        return
 
     print(Fore.GREEN + 'Type file:               {type_file}'.format(type_file=type_file))
 
